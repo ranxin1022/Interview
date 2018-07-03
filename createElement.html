@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态创建元素节点</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            var mydiv = $("<div id='d' title='mydiv'>hi my little div</div>")
+            $('body').append(mydiv);
+            $('body').append("<div id='d' title='mydiv'>hi my little div222</div>");
+            $('#p1').click(function () {
+                $(this).clone(true).appendTo('#p2');
+            });
+            $('#p3').click(function () {
+                $('#p1').remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="p1" style="background-color: yellow;width:300px">点我创建</p>
+    <p id="p2" style="background-color: yellow;width:300px">点我创建</p>
+    <p id="p3" style="background-color: yellow;width:300px">点我删除</p>
+</body>
+</html>

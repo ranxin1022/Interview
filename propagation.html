@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.js"></script>
+    <style>
+        .hid{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="box" style="height: 100px;width: 100px;border:1px yellow solid">
+    <input type="button" id="btn">
+    haha
+</div>
+</body>
+<script>
+    $('#box').on('click','#btn',function(e){
+        e.stopPropagation();
+        alert('btn');
+    })
+    $('#box').click(function () {
+        $('#btn').toggleClass('hid');
+    })
+</script>
+</html>
